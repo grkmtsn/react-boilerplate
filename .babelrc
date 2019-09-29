@@ -1,0 +1,21 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "react-hot-loader/babel",
+    "@babel/plugin-proposal-class-properties",
+    ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }, "antd"],
+    [
+      "import",
+      { "libraryName": "@jbuschke/formik-antd", "libraryDirectory": "es", "style": true },
+      "formik-antd"
+    ]
+  ]
+}
