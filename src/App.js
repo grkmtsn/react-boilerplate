@@ -1,23 +1,23 @@
 import React from 'react';
-import { Router, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
-import { history, Role } from '@/helpers';
-import { LoginPage, DashboardPage, SampleListPage, NotFoundPage, ForbiddenPage } from '@/pages';
+import { Role } from '@/helpers';
+import { LoginPage, DashboardPage, DemoListPage, NotFoundPage, ForbiddenPage } from '@/pages';
 import { Head, PrivateRoute } from './components/common';
 
 const App = () => {
   return (
     <React.Fragment>
       <Head />
-      <Router history={history}>
+      <Router>
         <Switch>
-          <Route path="/login" component={LoginPage} />
+          <Route exact path="/login" component={LoginPage} />
+          <PrivateRoute exact path="/" component={() => <Redirect to="/dashboard" />} />
           <PrivateRoute exact path="/dashboard" roles={[Role.Admin]} component={DashboardPage} />
-          <PrivateRoute exact path="/samplelist" roles={[Role.Admin]} component={SampleListPage} />
-          <PrivateRoute path="/" component={() => <Redirect to="/dashboard" />} />
+          <PrivateRoute exact path="/demolist" roles={[Role.Admin]} component={DemoListPage} />
           <Route path="/404" component={NotFoundPage} />
           <Route path="/403" component={ForbiddenPage} />
-          <Redirect to="/404" />
+          <Route component={() => <Redirect to="/404" />} />
         </Switch>
       </Router>
     </React.Fragment>

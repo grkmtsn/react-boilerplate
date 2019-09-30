@@ -5,7 +5,7 @@ import { Table, Button, Popconfirm, Icon } from 'antd';
 import { ContentBox } from '@/components/common';
 import { commonService } from '@/services';
 
-class SampleListPage extends React.Component {
+class DemoListPage extends React.Component {
   state = {
     loading: false,
     data: null,
@@ -139,4 +139,4 @@ class SampleListPage extends React.Component {
   }
 }
 
-export { SampleListPage };
+export { DemoListPage };

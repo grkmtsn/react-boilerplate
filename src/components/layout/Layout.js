@@ -71,18 +71,30 @@ class PageLayout extends React.Component {
               title={
                 <span>
                   <Icon type="user" />
-                  <span>Examples</span>
+                  <span>Demo Pages</span>
                 </span>
               }
             >
-              <Menu.Item title="Example List" key="/samplelist">
-                <Link to="/samplelist">Example List</Link>
+              <Menu.Item title="Example List" key="/demolist">
+                <Link to="/demolist">Demo List</Link>
               </Menu.Item>
-              <Menu.Item title="Example Form" key="4">
-                <Link to="/sampleform">Example Form</Link>
+              <Menu.Item title="Example Form" key="/demoform">
+                <Link to="/demoform">Example Form</Link>
               </Menu.Item>
             </SubMenu>
-            <Menu.Item key="5" onClick={this.logout}>
+            <Menu.Item title="404 Page" key="/404">
+              <Link to="/404">
+                <Icon type="security-scan" />
+                <span>404 Page</span>
+              </Link>
+            </Menu.Item>
+            <Menu.Item title="403 Page" key="/403">
+              <Link to="/403">
+                <Icon type="lock" />
+                <span>403 Page</span>
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="logout" onClick={this.logout}>
               <Icon type="logout" />
               <span>Logout</span>
             </Menu.Item>
