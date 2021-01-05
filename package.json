@@ -60,7 +60,7 @@
   "dependencies": {
     "@jbuschke/formik-antd": "^1.4.2",
     "antd": "^3.23.4",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "formik": "^1.5.8",
     "history": "^4.10.1",
     "prop-types": "^15.7.2",
